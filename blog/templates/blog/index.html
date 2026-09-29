@@ -31,9 +31,22 @@
         </div>
     </div>
 
+<!-- 
+    Creating a function to take input from the user. -->
 
-    #Creating a function to take input from the user.
+    <script>
+        function getUserResponse(){
+            var userText = $('#textInput').val();
+            var userHTML = '<p class="userText">User: <span>' + userText + '</span></p>';
+            $('#textInput').val("");
+            $('#chatbot').append(userHTML);
+    }
 
+
+        $('#buttonInput').click(function(){
+            getUserResponse();
+        })
+    </script>
     
     </body>
 </html>
