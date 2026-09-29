@@ -6,4 +6,12 @@ def index(request):
     return HttpResponse("This is my first urls")
 
 def specific(request):
-    return HttpResponse("This is the specific url.")
+    l = [1,2,5,4]
+    return HttpResponse(l)
+
+# Infact I can show anything to the url:
+# like-- o numbers
+#         o list...
+
+def article(request, article_id):
+    return HttpResponse(article_id)
