@@ -40,12 +40,25 @@
             var userHTML = '<p class="userText">User: <span>' + userText + '</span></p>';
             $('#textInput').val("");
             $('#chatbot').append(userHTML);
+
+
+            $.get('/blog/getResponse', {userMessage: userText}).done(function(data){             
+            var returnedMessage = "<p class='botText'> Chatbot: <span> "+ data +"<span/></p>" ;
+            $('#chatbot').append(returnedMessage);
+        })
     }
+
+            // 'url' to send msg from frontend to backend
+        
 
 
         $('#buttonInput').click(function(){
             getUserResponse();
         })
+
+        
+
+
     </script>
     
     </body>
